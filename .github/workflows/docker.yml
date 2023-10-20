@@ -5,8 +5,8 @@ on:
     branches:
       - main
 env:
-  dockerhub_user: ${{ secrets.DOCKERHUB_USERNAME }}
-  dockerhub_token: ${{ secrets.DOCKERHUB_TOKEN }}
+  dockerhub_user: ${{ env.DOCKERHUBUSER }}
+  dockerhub_token: ${{ secrets.DOCKERHUBPASS }}
   
 jobs:
   build-and-push:
@@ -25,6 +25,7 @@ jobs:
         name: Login to DockerHub
         uses: docker/login-action@v3
         with:
+          ecr: false
           username: ${{ env.dockerhub_user }}
           password: ${{ env.dockerhub_token }}
       -
