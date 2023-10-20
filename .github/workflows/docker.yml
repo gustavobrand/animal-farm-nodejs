@@ -6,7 +6,7 @@ on:
       - main
 env:
   dockerhub_user: ${{ env.DOCKERHUBUSER }}
-  dockerhub_token: ${{ secrets.DOCKERHUBPASS }}
+  dockerhub_token: ${{ env.DOCKERHUBPASS }}
   
 jobs:
   build-and-push:
