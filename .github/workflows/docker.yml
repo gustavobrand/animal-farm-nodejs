@@ -5,8 +5,8 @@ on:
     branches:
       - main
 env:
-  dockerhub_user: ${{ env.DOCKERHUBUSER }}
-  dockerhub_token: ${{ env.DOCKERHUBPASS }}
+  dockerhub_user: ${{ vars.DOCKERHUBUSER }}
+  dockerhub_token: ${{ vars.DOCKERHUBPASS }}
   
 jobs:
   build-and-push:
