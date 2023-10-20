@@ -29,7 +29,7 @@ jobs:
           password: ${{ env.dockerhub_token }}
       -
         name: Build and push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
